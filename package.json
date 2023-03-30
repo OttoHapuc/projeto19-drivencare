@@ -1,0 +1,33 @@
+{
+  "name": "projeto19-drivencare",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OttoHapuc/projeto19-drivencare.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OttoHapuc/projeto19-drivencare/issues"
+  },
+  "homepage": "https://github.com/OttoHapuc/projeto19-drivencare#readme",
+  "devDependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "uuid": "^9.0.0"
+  },
+  "dependencies": {
+    "joi": "^17.9.1",
+    "pg": "^8.10.0"
+  }
+}

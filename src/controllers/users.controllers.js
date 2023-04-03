@@ -10,10 +10,19 @@ async function enter(req, res, next) {
     }
 }
 async function create(req, res, next) {
-    const { name, email, password, user_is, specialty } = req.body;
+    const { name, email, password, user_is, specialty, address } = req.body;
     try {
-        await usersServices.create({ name, email, password, user_is, specialty });
+        await usersServices.create({ name, email, password, user_is, specialty, address });
         return res.sendStatus(201);
+    } catch (error) {
+        next(error);
+    }
+}
+async function searchMedics(req, res, next) {
+    const { name, specialty, address } = req.body;
+    try {
+        const result = await usersServices.searchMedics({ name, specialty, address });
+        return res.send(result);
     } catch (error) {
         next(error);
     }
@@ -22,4 +31,5 @@ async function create(req, res, next) {
 export default {
     enter,
     create,
+    searchMedics,
 }

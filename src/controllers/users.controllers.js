@@ -27,9 +27,19 @@ async function searchMedics(req, res, next) {
         next(error);
     }
 }
+async function schedule(req, res, next) {
+    const { date, time } = req.body;
+    try {
+        await usersServices.schedule({date, time});
+        return res.sendStatus(201)
+    } catch (error) {
+        next(error);
+    }
+}
 
 export default {
     enter,
     create,
     searchMedics,
+    schedule,
 }

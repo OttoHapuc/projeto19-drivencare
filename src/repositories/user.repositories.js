@@ -59,6 +59,9 @@ async function searchMedics({ name, specialty, address }) {
         [name, address, specialty]
     );
 }
+async function schedule(date,time){
+    
+}
 export default {
     findByEmail,
     create,

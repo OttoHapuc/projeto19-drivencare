@@ -27,6 +27,7 @@
     "uuid": "^9.0.0"
   },
   "dependencies": {
+    "@joi/date": "^2.1.0",
     "http-status": "^1.6.2",
     "joi": "^17.9.1",
     "pg": "^8.10.0"

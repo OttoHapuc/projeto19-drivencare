@@ -22,7 +22,13 @@ const singupSchema = joi.alternatives().conditional(joi.object({user_is: true}).
     })
 })
 
+const schedule = joi.object({
+    date: joi.string().regex(/^([0-9]{4})-([0-9]{2})-([0-9]{2})$/).required(),
+    time: joi.number().integer().required()
+  });
+
 export default {
     singinSchema,
     singupSchema,
+    schedule,
 }

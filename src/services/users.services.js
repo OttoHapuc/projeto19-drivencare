@@ -30,9 +30,20 @@ async function searchMedics({name, specialty, address}){
     if (!rowsCount) throw errors.invalidCredentialsError();
     return medics
 }
+async function schedule({date, time}){
+    //validar se é uma date 
+    const validDate = await userRepositories.date(date);
+    if(!validDate) throw errors.conflictError("Date not avaliable");
+    //validar se é um time habilitado
+    const validtime =await userRepositories.time(time);
+    if(!validtime) throw errors.conflictError("time not avaliable");
+    //atualizar availability conectado ao médico
+    await userRepositories.schedule({date, time});
+}
 
 export default {
     create,
     enter,
     searchMedics,
+    schedule,
 }
